@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 html{
     background-color: #fff;
@@ -13,19 +8,8 @@ html{
     color: #333;
 }
 
-h3{
-    font: normal 32px/1.5 'Open Sans', sans-serif;
-    color: #2c3e50;
-    margin: 50px 0;
-    text-align: center;
-}
-
-
 .container{
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #efefef;
+    padding: 0px;
 }
 
 .app{
@@ -36,13 +20,9 @@ h3{
 .app #start-camera{
     display: none;
     border-radius: 3px;
-    max-width: 400px;
-    color: #fff;
     background-color: #448AFF;
     text-decoration: none;
-    padding: 15px;
     opacity: 0.8;
-    margin: 50px auto;
     text-align: center;
 }
 
