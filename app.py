@@ -25,6 +25,5 @@ def process_image(raw_image):
     file.write(imgdata)
     file.close()
 
-
 if __name__ == '__main__':
     app.run(debug=True)

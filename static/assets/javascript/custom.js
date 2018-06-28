@@ -10,4 +10,6 @@ $(function(){
         "max-width" : $(window).width(),
         "padding" : "10px"
     });
+    $("#snap").hide();
+    $("#canvas").hide();
 });

@@ -16,26 +16,26 @@
         <!-- END-CUSTOM-CSS -->
     </head>
     <body>
-        <div class="container">
-            <div id="app-container">
-                <div class="app">
-                    <a href="#" id="start-camera" class="card-panel">Mark Attendance</a>
-                    <div class="card center" style="padding: 10px;">
+        <div class="row">
+            <div class="container">
+                <div class="app center-align">
+                    <a href="#" id="start-camera"></a>
+                    <div class="center-align card" style="padding: 10px;">
                         <video class="responsive-video" id="camera-stream" style="height: 450px;"></video>
                     </div>
                     <img id="snap">
                     <p id="error-message"></p>
-                    <div class="controls center">
+                    <div class="controls center-align">
                         <a href="#" id="delete-photo" title="Delete Photo" style="display: none;"><i class="material-icons">delete</i></a>
-                        <!-- <a href="#" id="download-photo" download="unknown.png" title="Save Photo" class="disabled"><i class="material-icons">file_download</i></a>   -->
                         <form action="/" method="POST" id="image-uploader" name="image-uploader">
-                            <input type="text" name="photo" id="download-photo" title="upload-photo" value="">
-                            <a href="#" id="take-photo" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+                            <input type="text" name="photo" id="download-photo" title="upload-photo" value="" style="display: none;">
+                            <a href="#" class="btn" id="take-photo" title="Take Photo" style="bottom: 11px; margin-top: -115px; opacity: 0.6;"><i class="material-icons left">camera_alt</i>Mark Attendance</a>
                         </form>
                     </div>
                     <!-- Hidden canvas element. Used for taking snapshot of video. -->
-                    <canvas></canvas>
+                    <canvas id="canvas"></canvas>
                 </div>
+                <div id="msg" class="center-align" style="margin-top: -35px; display: none;">data</div>
             </div>
         </div>
         <!-- JQUERY -->
