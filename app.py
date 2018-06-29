@@ -1,5 +1,5 @@
 from flask import *
-import base64
+from render_image import *
 import os
 
 app = Flask(__name__)
@@ -17,13 +17,6 @@ def index():
 def show_image():
     filename = 'unknown/unknown.jpg'
     return send_file(filename, mimetype='image/jpg')
-
-def process_image(raw_image):
-    data = str(raw_image)[22:]
-    imgdata = base64.b64decode(data)
-    file = open('unknown/unknown.jpg','wb')
-    file.write(imgdata)
-    file.close()
 
 if __name__ == '__main__':
     app.run(debug=True)
