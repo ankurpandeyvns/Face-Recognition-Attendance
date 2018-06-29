@@ -18,13 +18,13 @@
     <body>
         <div class="row">
             <div class="container">
+                <p class="card-panel red accent-4 white-text center-align" style="display: none;" id="error-message"></p>
+                <p class="card-panel blue-grey center-align white-text" style="display: none;" id="start-camera"></p>
                 <div class="app center-align">
-                    <a href="#" id="start-camera"></a>
                     <div class="center-align card" style="padding: 10px;">
                         <video class="responsive-video" id="camera-stream" style="height: 450px;"></video>
                     </div>
                     <img id="snap">
-                    <p id="error-message"></p>
                     <div class="controls center-align">
                         <a href="#" id="delete-photo" title="Delete Photo" style="display: none;"><i class="material-icons">delete</i></a>
                         <form action="/" method="POST" id="image-uploader" name="image-uploader">

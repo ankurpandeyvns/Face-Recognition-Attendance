@@ -5,7 +5,7 @@
 
 .app video#camera-stream.visible,
 .app img#snap.visible,
-.app #error-message.visible
+#error-message.visible
 {
     display: block;
 }
