@@ -58,7 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if(isMobile == true){
         $('#start-camera').css({
             'display' : 'block'
-        }).fadeOut('Slow');
+        });
+        $('#start-camera').on('click', function(){
+            $(this).fadeOut('slow');
+        });
     }
 
     start_camera.addEventListener("click", function(e){
