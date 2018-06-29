@@ -96,14 +96,14 @@ document.addEventListener('DOMContentLoaded', function () {
             'left' : 250
         });
         $.ajax({
-            url: "/",
+            url: "/save",
             type: "POST",
             data: $data2post,
             success: function(data){
                 if(data){
                     $("#msg").css({
                         'display' : 'block'
-                    }).addClass('card-panel green white-text').html('Attendance Marked!').fadeIn('slow').delay(2000).fadeOut('slow');
+                    }).addClass('card-panel green white-text').html(data).fadeIn('slow').delay(2000).fadeOut('slow');
                     $("#take-photo").html('<i class="material-icons left">camera_alt</i>Mark Attendance');
                 }
             },
