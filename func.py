@@ -1,3 +1,4 @@
+#Author: SWETANK SUBHAM, ANKUR PANDEY
 import os
 import sqlite3
 import time
@@ -28,6 +29,6 @@ def tocheck():
         query="UPDATE Attendance SET _"+date_today+" = 'P' WHERE id="+regno+";"
         conn.cursor().execute(query)
         conn.commit()
-        return "ATTENDANCE MARKED SUCCESSFULLY FOR {}".format(regno)
+        return ['marked', regno]
     except:           
-        return "USER NOT FOUND! PLEASE CONTACT ADMINISTRATION"
+        return ['not_marked', None]

@@ -1,3 +1,4 @@
+//Author: SWETANK SUBHAM, ANKUR PANDEY
 document.addEventListener('DOMContentLoaded', function () {
     // References to all the element we will need.
     var video = document.querySelector('#camera-stream'),
@@ -23,8 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     else{
         // Request the camera.
-        navigator.getMedia(
-            {
+        navigator.getMedia({
                 video: true
             },
             // Success Callback
@@ -101,14 +101,29 @@ document.addEventListener('DOMContentLoaded', function () {
             data: $data2post,
             success: function(data){
                 if(data){
-                    $("#msg").css({
-                        'display' : 'block'
-                    }).addClass('card-panel green white-text').html(data).fadeIn('slow').delay(2000).fadeOut('slow');
-                    $("#take-photo").html('<i class="material-icons left">camera_alt</i>Mark Attendance');
+                    var retData = data;
+                    if(retData[0].status == "marked"){
+                        $("#msg").removeClass('red accent-4');
+                        $("#msg").css({
+                            'display' : 'block'
+                        }).addClass('card-panel green white-text').html('Attendace marked for ' + retData[0].reg + '.').fadeIn('slow').delay(3000).fadeOut('slow');
+                        $("#take-photo").html('<i class="material-icons left">camera_alt</i>Mark Attendance');
+                    }else if(retData[0].status == "not_marked"){
+                        $("#msg").removeClass('green');
+                        $("#msg").css({
+                            'display' : 'block'
+                        }).addClass('card-panel red accent-4 white-text').html('').fadeIn('slow').delay(3000).fadeOut('slow');
+                        $("#take-photo").html('<i class="material-icons left">camera_alt</i>Mark Attendance');
+                    }
                 }
             },
             error: function(){
-                $("#msg").html('Please Contact Administration!');
+                $("#msg").css({
+                    'display' : 'block'
+                }).addClass('card-panel red accent-4 white-text').html('Please Contact Administration!').fadeIn('slow').delay(3000).fadeOut('slow');
+                $("#msg").css({
+                    'display' : 'none'
+                }).removeClass('card-panel red accent-4 white-text');
             }
         })
     }

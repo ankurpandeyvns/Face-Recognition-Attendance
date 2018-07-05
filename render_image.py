@@ -1,3 +1,4 @@
+#Author: SWETANK SUBHAM, ANKUR PANDEY
 import base64
 from func import *
 def process_image(raw_image):
@@ -7,4 +8,4 @@ def process_image(raw_image):
     file.write(imgdata)
     file.close()
     a = tocheck()
-    return a
+    return [{'status' : a[0], 'reg' : a[1]}]
