@@ -1,7 +1,7 @@
+#Author: SWETANK SUBHAM, ANKUR PANDEY
 from flask import *
 from render_image import *
 import os
-#anurag@bowstringstudio.in
 app = Flask(__name__)
 UPLOAD_FOLDER = os.path.basename('unknown')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -12,13 +12,15 @@ def index():
 
 @app.route('/save', methods = ['GET', 'POST'])
 def show_image():
-    # filename = 'unknown/unknown.jpg'
     if request.method == 'POST':
         raw_image = request.form['photo']
         a = process_image(raw_image)
-        return a
-    
-    #return send_file(filename, mimetype='image/jpg')
+        return jsonify(a)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=False)
